@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     // Variable
     public TextMeshProUGUI text;
     public InputActionReference e;
+    public InputActionReference b;
 
     private int score;
    
@@ -35,6 +36,39 @@ public class GameManager : MonoBehaviour
 
         }
 
+        if (b.action.WasPressedThisFrame())
+        {
+
+            score--;
+
+
+        }
+
+
+        if (score >= 100)
+        {
+
+            text.color = Color.green;
+
+
+        }
+
+        else if (score < 0)
+        {
+
+            text.color = Color.red;
+
+
+        }
+
+        else
+        {
+
+            text.color = Color.yellow;
+
         
+        }
+
+
     }
 }
